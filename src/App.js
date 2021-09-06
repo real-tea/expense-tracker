@@ -7,10 +7,12 @@ import Expensetotal from './components/Expensetotal';
 import ExpenseList from './components/expenseList';
 import AddExpense from './components/AddExpense';
 
+import { AppProvider} from './context/AppContext';
+
 
 const App = () => {
   return (
-    <div className="App">
+    <AppProvider>
       <div className = 'container'>
         <h1 className = 'mt-3'>Spending Tracker 💵🤑</h1>
         <div className = 'row mt-3'>
@@ -41,7 +43,7 @@ const App = () => {
       </div>
 
       
-    </div>
+    </AppProvider>
   );
 }
 

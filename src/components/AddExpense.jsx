@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 const AddExpense = () => {
+
+    const [name, setName] = useState('');
+    const [cost, setCost] = useState('');
+
+    const onSumbit = (event) =>{}
     return (
         <form>
             <div className = 'row'> 
