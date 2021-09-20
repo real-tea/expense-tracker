@@ -8,7 +8,7 @@ const AddExpense = () => {
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
 
-    const onSumbit = (event) =>{
+    const onSubmit = (event) =>{
         event.preventDefault();
 
         const expense = {
@@ -23,7 +23,7 @@ const AddExpense = () => {
         });
     };
     return (
-        <form>
+        <form onSubmit = { onSubmit }>
             <div className = 'row'> 
             <div className = 'col-sm'> 
                 <label for = 'name'>Name</label>
@@ -32,16 +32,22 @@ const AddExpense = () => {
                     required = 'required'
                     type = 'text'
                     className = 'form-control'
-                    id = 'name'></input>
+                    id = 'name'
+                    value = { name }
+                    onChange = {(event => setName(event.target.value))}
+                    />
             </div>
             <div className = 'col-sm'>
                 <label for = 'cost'>Cost</label>
 
                 <input 
                     required = 'required'
-                    type = 'text'
+                    type = 'number'
                     className = 'form-control'
-                    id = 'cost'></input>
+                    id = 'cost'
+                    value = {cost}
+                    onChange = {(event) => setCost(event.target.value)}
+                    />
 
             </div>
             </div>
