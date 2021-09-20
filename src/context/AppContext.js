@@ -1,5 +1,8 @@
 import React,{ useReducer,createContext } from 'react';
 
+
+export const AppContext = createContext();
+
 const AppReducer = (state, action) => {
     switch(action.type){
         case 'DELETE_EXPENSE':
@@ -30,7 +33,7 @@ const initialState = {
     ],
 };
 
-export const AppContext = createContext();
+
 
 export const AppProvider = (props) => {
     const [state,dispatch] = useReducer(AppReducer , initialState);
